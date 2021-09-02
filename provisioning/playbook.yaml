@@ -1,0 +1,32 @@
+---
+- name: "PROVISIONING"
+  hosts: all
+  become: true
+  gather_facts: true
+
+  vars_files:
+    - "secrets.yaml"
+  
+  tasks:
+    - name: "PROVISIONING | add you ssh key to authorized_key."
+      authorized_key:
+        user: "{{ profile_name }}"
+        key: "{{ profile_key }}"
+
+    - name: "PROVISIONING | update apt cache."
+      apt:
+        update_cache: true
+        cache_valid_time: 86400
+      when: ansible_os_family == 'Debian'
+
+    - name: "PROVISIONING | install required packages."
+      apt:
+        name: "{{ base_soft_list }}"
+        update_cache: false
+      when: ansible_os_family == 'Debian'
+
+    - name: "PROVISIONING | install extra packages."
+      apt:
+        name: "{{ base_soft_list_extra }}"
+        update_cache: false
+      when: ansible_os_family == 'Debian'

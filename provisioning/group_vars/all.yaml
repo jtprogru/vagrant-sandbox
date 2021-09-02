@@ -1,0 +1,49 @@
+---
+# Default user for Vagrant box
+profile_name: vagrant
+# My personal public ssh keys
+profile_key: https://github.com/jtprogru.keys
+# My extra soft list
+base_soft_list_extra:
+  - ansible
+  - net-tools
+  - ansible-lint
+  - yamllint
+# My default base soft list
+base_soft_list:
+  - apt-transport-https
+  - aptitude
+  - bash-completion
+  - bc
+  - bsd-mailx
+  - curl
+  - dstat
+  - fping
+  - git
+  - git-core
+  - gnupg
+  - htop
+  - iotop
+  - iperf3
+  - jq
+  - lsof
+  - mc
+  - most
+  - mtr
+  - multitail
+  - ncdu
+  - python-pycurl
+  - python3-pip
+  - python3-setuptools
+  - python3-wheel
+  - python3-pycurl
+  - python3-venv
+  - rsync
+  - screen
+  - sysstat
+  - tcpdump
+  - telnet
+  - tree
+  - unzip
+  - vim
+  - wget
