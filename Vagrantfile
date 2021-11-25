@@ -10,9 +10,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.define :sandbox, primary: true do |sandbox_config|
     sandbox_config.vm.provider "virtualbox" do |vb|
-        vb.memory = "2048"
-        vb.cpus = 1
-        vb.name = "sandbox"
+      vb.memory = "2048"
+      vb.cpus = 1
+      vb.name = "sandbox"
     end
 
     sandbox_config.vm.box = "#{os}"
@@ -27,11 +27,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         "--connection=paramiko",
         "--private-key=~/.vagrant.d/insecure_private_key"
       ]
-      
-      
     end
-    
   end
-
 end
-
