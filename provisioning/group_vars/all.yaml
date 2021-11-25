@@ -9,6 +9,7 @@ base_soft_list_extra:
   - net-tools
   - ansible-lint
   - yamllint
+  - nmon
 # My default base soft list
 base_soft_list:
   - apt-transport-https
@@ -23,6 +24,7 @@ base_soft_list:
   - git-core
   - gnupg
   - htop
+  - inetutils-traceroute
   - iotop
   - iperf3
   - jq
